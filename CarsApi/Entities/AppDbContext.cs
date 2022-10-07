@@ -9,5 +9,6 @@ namespace CarsApi.Entities
         }
 
         public DbSet<Brand> Brands { get; set; }
+        public DbSet<Designer> Designers { get; set; }
     }
 }

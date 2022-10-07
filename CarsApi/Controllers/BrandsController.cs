@@ -49,5 +49,35 @@ namespace CarsApi.Controllers
             var brandDTO = mapper.Map<BrandDTO>(entity);
             return new CreatedAtRouteResult("getBrand", new {id = entity.Id}, brandDTO);
         }
+
+        [HttpPut("{id:int}")]
+        public async Task<ActionResult> Put(int id, [FromBody] BrandPostDTO brandPostDTO)
+        {
+            var exists = await context.Brands.AnyAsync(x => x.Id == id);
+            if (!exists)
+            {
+                return NotFound();
+            }
+
+            var entity = mapper.Map<Brand>(brandPostDTO);
+            entity.Id = id;
+            context.Entry(entity).State = EntityState.Modified;
+            await context.SaveChangesAsync();
+            return NoContent();
+        }
+
+        [HttpDelete("{id:int}")]
+        public async Task<ActionResult> Delete(int id)
+        {
+            var exists = await context.Brands.AnyAsync(x => x.Id == id);
+            if (!exists)
+            {
+                return NotFound();
+            }
+            context.Remove(new Brand() { Id=id});
+            await context.SaveChangesAsync();
+            return NoContent();
+        }
+
     }
 }
