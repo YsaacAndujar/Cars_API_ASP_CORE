@@ -1,11 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "gwcDeqmlF0/uTEBh2SFMWZG98mHntafs9vilhnb9Kd3JODjJW8Z0To1iN8Raqqk85UgVRDiA2P8g50Ohr5BuZg==",
+  "dgSpecHash": "gpVEaYMO5jYt6/EnDcBwIy660kBeoDsbNqVJo3vUM2/xQsV1Yy3fhMkn1wIb7azPmocIPSHrHoqJw3s+7jH6kQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\yandujar\\source\\repos\\CarsApi\\CarsApi\\CarsApi.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\yandujar\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
+    "C:\\Users\\yandujar\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",
     "C:\\Users\\yandujar\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
-    "C:\\Users\\yandujar\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
+    "C:\\Users\\yandujar\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\yandujar\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.4\\microsoft.data.sqlclient.2.1.4.nupkg.sha512",
     "C:\\Users\\yandujar\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\2.1.1\\microsoft.data.sqlclient.sni.runtime.2.1.1.nupkg.sha512",
     "C:\\Users\\yandujar\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.9\\microsoft.entityframeworkcore.6.0.9.nupkg.sha512",
