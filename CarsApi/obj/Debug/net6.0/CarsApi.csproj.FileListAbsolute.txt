@@ -61,3 +61,4 @@ C:\Users\yandujar\source\repos\CarsApi\CarsApi\obj\Debug\net6.0\CarsApi.genrunti
 C:\Users\yandujar\source\repos\CarsApi\CarsApi\obj\Debug\net6.0\ref\CarsApi.dll
 C:\Users\yandujar\source\repos\CarsApi\CarsApi\bin\Debug\net6.0\AutoMapper.dll
 C:\Users\yandujar\source\repos\CarsApi\CarsApi\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\yandujar\source\repos\CarsApi\CarsApi\bin\Debug\net6.0\CarsApi.staticwebassets.runtime.json

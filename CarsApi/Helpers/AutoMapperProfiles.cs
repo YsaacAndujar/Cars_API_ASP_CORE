@@ -10,6 +10,10 @@ namespace CarsApi.Helpers
         {
             CreateMap<Brand, BrandDTO>().ReverseMap();
             CreateMap<BrandPostDTO, Brand>();
+
+            CreateMap<Designer, DesignerDTO>().ReverseMap();
+            CreateMap<DesignerPostDTO, Designer>();
+
         }
     }
 }

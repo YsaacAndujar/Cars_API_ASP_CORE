@@ -1,11 +1,105 @@
 {
   "Version": 1,
-  "Hash": "ted/NF3JAsdo7PY5Isp5kKzlM5fVPs8Pn7xKregxVRw=",
+  "Hash": "kGRQ1K9y0mF6LhAnpui/nHb3+QX8zzjX7R7j0+qwWKk=",
   "Source": "CarsApi",
   "BasePath": "_content/CarsApi",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": []
+  "DiscoveryPatterns": [
+    {
+      "Name": "CarsApi\\wwwroot",
+      "Source": "CarsApi",
+      "ContentRoot": "C:\\Users\\yandujar\\source\\repos\\CarsApi\\CarsApi\\wwwroot\\",
+      "BasePath": "_content/CarsApi",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\yandujar\\source\\repos\\CarsApi\\CarsApi\\wwwroot\\files\\286ea63c-3cb7-442e-bf91-f13be44d34e4.jpeg",
+      "SourceId": "CarsApi",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\yandujar\\source\\repos\\CarsApi\\CarsApi\\wwwroot\\",
+      "BasePath": "_content/CarsApi",
+      "RelativePath": "files/286ea63c-3cb7-442e-bf91-f13be44d34e4.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\files\\286ea63c-3cb7-442e-bf91-f13be44d34e4.jpeg"
+    },
+    {
+      "Identity": "C:\\Users\\yandujar\\source\\repos\\CarsApi\\CarsApi\\wwwroot\\files\\3b18e09f-68a0-498e-afbe-77a5dfca0c83.jpeg",
+      "SourceId": "CarsApi",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\yandujar\\source\\repos\\CarsApi\\CarsApi\\wwwroot\\",
+      "BasePath": "_content/CarsApi",
+      "RelativePath": "files/3b18e09f-68a0-498e-afbe-77a5dfca0c83.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\files\\3b18e09f-68a0-498e-afbe-77a5dfca0c83.jpeg"
+    },
+    {
+      "Identity": "C:\\Users\\yandujar\\source\\repos\\CarsApi\\CarsApi\\wwwroot\\files\\s.jpg",
+      "SourceId": "CarsApi",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\yandujar\\source\\repos\\CarsApi\\CarsApi\\wwwroot\\",
+      "BasePath": "_content/CarsApi",
+      "RelativePath": "files/s.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\files\\s.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\yandujar\\source\\repos\\CarsApi\\CarsApi\\wwwroot\\images\\badde51e-a5e0-4368-8319-92ebb7e17b52.jpeg",
+      "SourceId": "CarsApi",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\yandujar\\source\\repos\\CarsApi\\CarsApi\\wwwroot\\",
+      "BasePath": "_content/CarsApi",
+      "RelativePath": "images/badde51e-a5e0-4368-8319-92ebb7e17b52.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\badde51e-a5e0-4368-8319-92ebb7e17b52.jpeg"
+    },
+    {
+      "Identity": "C:\\Users\\yandujar\\source\\repos\\CarsApi\\CarsApi\\wwwroot\\images\\d3e08a40-0262-4bd6-a013-99aa955c5222.jpeg",
+      "SourceId": "CarsApi",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\yandujar\\source\\repos\\CarsApi\\CarsApi\\wwwroot\\",
+      "BasePath": "_content/CarsApi",
+      "RelativePath": "images/d3e08a40-0262-4bd6-a013-99aa955c5222.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\d3e08a40-0262-4bd6-a013-99aa955c5222.jpeg"
+    }
+  ]
 }
