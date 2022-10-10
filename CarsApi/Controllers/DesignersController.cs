@@ -72,7 +72,7 @@ namespace CarsApi.Controllers
             {
                 Directory.CreateDirectory(baseRoute);
             }
-            var fileRoute = Guid.NewGuid() + "." + fileExtension;
+            var fileRoute = DateTime.Now.ToString("yyMMddHHmmssff") + "." + fileExtension;
             var fileAbsoluteRoute = baseRoute + fileRoute;
             using (FileStream fileStream = System.IO.File.Create(fileAbsoluteRoute))
             {
@@ -81,7 +81,13 @@ namespace CarsApi.Controllers
                 return "/media/"+fileRoute;
             }
         }
-
+        void deleteImg(string fileRoute)
+        {
+            var baseRoute = $"{environment.WebRootPath}\\images\\";
+            fileRoute = fileRoute.Remove(0, 6);
+            var fileAbsoluteRoute = baseRoute + fileRoute;
+            System.IO.File.Delete(fileAbsoluteRoute);
+        }
         [HttpPut("{id:int}")]
         public async Task<ActionResult> Put(int id, [FromForm] DesignerPostDTO designerPostDTO)
         {
@@ -92,6 +98,11 @@ namespace CarsApi.Controllers
             }
 
             var entity = mapper.Map<Designer>(designerPostDTO);
+            if (entity.Photo != null)
+            {
+                deleteImg(entity.Photo);
+                entity.Photo = saveImg(designerPostDTO.Photo);
+            }
             entity.Id = id;
             context.Entry(entity).State = EntityState.Modified;
             await context.SaveChangesAsync();
@@ -101,12 +112,16 @@ namespace CarsApi.Controllers
         [HttpDelete("{id:int}")]
         public async Task<ActionResult> Delete(int id)
         {
-            var exists = await context.Designers.AnyAsync(x => x.Id == id);
-            if (!exists)
+            var entity = await context.Designers.FirstOrDefaultAsync(x => x.Id == id);
+            if (entity == null)
             {
                 return NotFound();
             }
-            context.Remove(new Designer() { Id = id });
+            if (entity.Photo != null)
+            {
+                deleteImg(entity.Photo);
+            }
+            context.Remove(entity);
             await context.SaveChangesAsync();
             return NoContent();
         }

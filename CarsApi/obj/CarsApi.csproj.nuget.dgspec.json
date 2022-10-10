@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\yandujar\\source\\repos\\CarsApi\\CarsApi\\CarsApi.csproj": {}
+    "C:\\Users\\yandujar\\source\\repos\\CarsAPI\\CarsApi\\CarsApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\yandujar\\source\\repos\\CarsApi\\CarsApi\\CarsApi.csproj": {
+    "C:\\Users\\yandujar\\source\\repos\\CarsAPI\\CarsApi\\CarsApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\yandujar\\source\\repos\\CarsApi\\CarsApi\\CarsApi.csproj",
+        "projectUniqueName": "C:\\Users\\yandujar\\source\\repos\\CarsAPI\\CarsApi\\CarsApi.csproj",
         "projectName": "CarsApi",
-        "projectPath": "C:\\Users\\yandujar\\source\\repos\\CarsApi\\CarsApi\\CarsApi.csproj",
+        "projectPath": "C:\\Users\\yandujar\\source\\repos\\CarsAPI\\CarsApi\\CarsApi.csproj",
         "packagesPath": "C:\\Users\\yandujar\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\yandujar\\source\\repos\\CarsApi\\CarsApi\\obj\\",
         "projectStyle": "PackageReference",

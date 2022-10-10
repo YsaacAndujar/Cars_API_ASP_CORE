@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "MrXeuC0Idt1aTp2M2rxqi9yQiaofxnI/G3Z0+kAFsVGEBK/lbLHur81zBRFh8WkhdVA9EBOnRmsIeEy79rytvw==",
+  "dgSpecHash": "ui0f18IOONChgE8qUybE2UTE1muCyV9rYj67p/XNtw8nCILaSB9A5xSEkQ3SmLM7OXdHpvbkboOykwlS0pTOHg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\yandujar\\source\\repos\\CarsApi\\CarsApi\\CarsApi.csproj",
+  "projectFilePath": "C:\\Users\\yandujar\\source\\repos\\CarsAPI\\CarsApi\\CarsApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\yandujar\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
     "C:\\Users\\yandujar\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",
