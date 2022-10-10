@@ -14,6 +14,8 @@ namespace CarsApi.Helpers
             CreateMap<Designer, DesignerDTO>().ReverseMap();
             CreateMap<DesignerPostDTO, Designer>();
 
+            CreateMap<Car, CarDTO>().ReverseMap();
+            CreateMap<CarPostDTO, Car>();
         }
     }
 }
