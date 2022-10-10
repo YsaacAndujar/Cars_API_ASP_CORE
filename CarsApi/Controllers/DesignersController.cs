@@ -1,6 +1,8 @@
 ﻿using AutoMapper;
 using CarsApi.DTOs;
 using CarsApi.Entities;
+using CarsApi.Helpers;
+using CarsApi.services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -13,18 +15,24 @@ namespace CarsApi.Controllers
         private readonly AppDbContext context;
         private readonly IMapper mapper;
         private readonly IWebHostEnvironment environment;
+        private readonly ILocalFileSaver localFileSaver;
 
-        public DesignersController(AppDbContext context, IMapper mapper, IWebHostEnvironment environment)
+        public DesignersController(AppDbContext context, IMapper mapper, IWebHostEnvironment environment,
+            ILocalFileSaver localFileSaver)
         {
             this.context = context;
             this.mapper = mapper;
             this.environment = environment;
+            this.localFileSaver = localFileSaver;
         }
 
         [HttpGet]
-        public async Task<ActionResult<List<DesignerDTO>>> Get()
+        public async Task<ActionResult<List<DesignerDTO>>> Get([FromQuery] PaginationDTO paginationDTO)
         {
-            var entities = await context.Designers.ToListAsync();
+            var queryable = context.Designers.AsQueryable();
+            await HttpContext.InsertParametersPagination(queryable, paginationDTO.EntitiesPerPage);
+
+            var entities = await context.Designers.Paginate(paginationDTO).ToListAsync();
             var data = mapper.Map<List<DesignerDTO>>(entities);
             return data;
         }
@@ -45,49 +53,13 @@ namespace CarsApi.Controllers
         public  async Task<ActionResult> Post([FromForm] DesignerPostDTO designerPostDTO)
         {
             var entity = mapper.Map<Designer>(designerPostDTO);
-            entity.Photo = saveImg(designerPostDTO.Photo);
+            entity.Photo = await localFileSaver.SaveAsync(designerPostDTO.Photo, Validations.FileEnumType.Image);
             context.Add(entity);
             await context.SaveChangesAsync();
             var designerDTO = mapper.Map<DesignerDTO>(entity);
             return new CreatedAtRouteResult("getDesigner", new { id = entity.Id }, designerDTO);
         }
 
-        string saveImg(IFormFile formFile)
-        {
-            if(formFile == null)
-            {
-                return null;
-            }
-            if (formFile.Length <= 0)
-            {
-                return null;
-            }
-            var fileExtension = formFile.ContentType.Split("/").LastOrDefault();
-            if (fileExtension == null)
-            {
-                return null;
-            }
-            var baseRoute = $"{environment.WebRootPath}\\images\\";
-            if (!Directory.Exists(baseRoute))
-            {
-                Directory.CreateDirectory(baseRoute);
-            }
-            var fileRoute = DateTime.Now.ToString("yyMMddHHmmssff") + "." + fileExtension;
-            var fileAbsoluteRoute = baseRoute + fileRoute;
-            using (FileStream fileStream = System.IO.File.Create(fileAbsoluteRoute))
-            {
-                formFile.CopyToAsync(fileStream);
-                fileStream.Flush();
-                return "/media/"+fileRoute;
-            }
-        }
-        void deleteImg(string fileRoute)
-        {
-            var baseRoute = $"{environment.WebRootPath}\\images\\";
-            fileRoute = fileRoute.Remove(0, 6);
-            var fileAbsoluteRoute = baseRoute + fileRoute;
-            System.IO.File.Delete(fileAbsoluteRoute);
-        }
         [HttpPut("{id:int}")]
         public async Task<ActionResult> Put(int id, [FromForm] DesignerPostDTO designerPostDTO)
         {
@@ -100,8 +72,8 @@ namespace CarsApi.Controllers
             var entity = mapper.Map<Designer>(designerPostDTO);
             if (entity.Photo != null)
             {
-                deleteImg(entity.Photo);
-                entity.Photo = saveImg(designerPostDTO.Photo);
+                await localFileSaver.RemoveAsync(entity.Photo, Validations.FileEnumType.Image);
+                entity.Photo = await localFileSaver.SaveAsync(designerPostDTO.Photo, Validations.FileEnumType.Image);
             }
             entity.Id = id;
             context.Entry(entity).State = EntityState.Modified;
@@ -119,7 +91,7 @@ namespace CarsApi.Controllers
             }
             if (entity.Photo != null)
             {
-                deleteImg(entity.Photo);
+                await localFileSaver.RemoveAsync(entity.Photo, Validations.FileEnumType.Image);
             }
             context.Remove(entity);
             await context.SaveChangesAsync();
