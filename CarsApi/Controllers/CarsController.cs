@@ -36,7 +36,9 @@ namespace CarsApi.Controllers
         [HttpGet("{id}", Name = "getCar")]
         public async Task<ActionResult<CarDTO>> Get(int id)
         {
-            var entities = await context.Cars.FirstOrDefaultAsync(x => x.Id == id);
+            var entities = await context.Cars
+                .Include(x=>x.CarsDesigners)
+                .FirstOrDefaultAsync(x => x.Id == id);
             if (entities == null)
             {
                 return NotFound();
