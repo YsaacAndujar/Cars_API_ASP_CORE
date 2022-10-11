@@ -1,7 +1,6 @@
 ﻿using AutoMapper;
 using CarsApi.DTOs;
 using CarsApi.Entities;
-
 namespace CarsApi.Helpers
 {
     public class AutoMapperProfiles: Profile
@@ -15,7 +14,18 @@ namespace CarsApi.Helpers
             CreateMap<DesignerPostDTO, Designer>();
 
             CreateMap<Car, CarDTO>().ReverseMap();
-            CreateMap<CarPostDTO, Car>();
+            CreateMap<CarPostDTO, Car>()
+                .ForMember(x => x.CarsDesigners, options => options.MapFrom(MapCarsDesigners));
+        }
+        private List<CarsDesigners> MapCarsDesigners(CarPostDTO carPostDTO, Car cars)
+        {
+            var result = new List<CarsDesigners>();
+            if(carPostDTO == null) { return result; }
+            foreach (var id in carPostDTO.CarsDesigners)
+            {
+                result.Add(new CarsDesigners() { DesignerId = id });
+            }
+            return result;
         }
     }
 }

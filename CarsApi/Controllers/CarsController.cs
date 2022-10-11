@@ -22,6 +22,7 @@ namespace CarsApi.Controllers
             this.mapper = mapper;
             this.localFileSaver = localFileSaver;
         }
+
         [HttpGet]
         public async Task<ActionResult<List<CarDTO>>> Get([FromQuery] PaginationDTO paginationDTO)
         {

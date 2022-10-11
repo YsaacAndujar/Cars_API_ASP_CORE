@@ -9,5 +9,6 @@ namespace CarsApi.Entities
         [StringLength(50)]
         public string Name { get; set; }
         public string Photo { get; set; }
+        public List<CarsDesigners> CarsDesigners { get; set; }
     }
 }
